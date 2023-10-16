@@ -1,70 +1,318 @@
-/* Reset some default styles */
-body, h1, h2, h3, p {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('./Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+
+section {
+    padding: 50px;
+    text-align: center;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center; /* Center the header content */
+#name {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid; /* This creates the line */
 }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+
+@keyframes typingCursor {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
-nav {
+#intro {
+    background-color: #000;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Center the navigation links horizontally */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+
+
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.square {
+    position: absolute;
+    border: 2px solid white;  /* White border */
+    width: 15px;  /* Adjust size as per your requirement */
+    height: 15px;  /* Adjust size as per your requirement */
+    animation: fadeInOut 3s infinite, rotateSquare 6s linear infinite;
+
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateSquare {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#intro .intro-content {
+    align-self: flex-start;
+}
+
+
+
+#intro h1 {
+    font-size: 100px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50px; /* Keeps the text 50px away from the left */
+    transform: translateY(-50%); /* Centers vertically */
+}
+
+#intro img {
+    position: absolute; /* Positioning it absolutely... */
+    right: 0;           /* ...at the right */
+    top: 50%;           /* ...and center vertically */
+    transform: translateY(-50%); /* Centering trick */
+    animation: slideLeft 3s forwards; /* 3s is the duration of animation */
+}
+
+
+@keyframes slideLeft {
+    from {
+        right: 100%; /* Starting from outside of the right boundary */
+    }
+    to {
+        right: 0;
+    }
+}
+
+#menu {
+    position: absolute;
+    top: 20px; /* Distance from top */
+    left: 50px; /* Distance from left */
+    color: white;
     font-size: 18px;
 }
 
-section {
-    padding: 40px 0;
-    text-align: center; /* Center the section content */
+#menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;  /* Smooth transition for color change */
 }
 
-h2 {
-    font-size: 28px;
+#menu a:hover {
+    color: grey;  /* Color change on hover */
+    text-decoration: none;  /* No underline on hover */
 }
 
-.project {
-    margin-bottom: 30px;
+#menu span {
+    color: white;
+    margin: 0 10px;
 }
 
-.project img {
-    max-width: 100%;
+
+/* ... (CSS for other sections above) */
+#about {
+    background-color: #FFFF;
+    color: black;
+    height: 100vh;
+    font-weight: bold;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
+#about .about-content {
+    display: flex;
+    align-items: center; /* Vertically aligns the children (h2 and about-text) in the middle */
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%; /* Takes full height of the parent */
+    text-align: left; /* Aligns text to the left */
+    padding-left: 50px; /* Adds some space to the left */
+}
+
+#about .about-left {
+    max-width: 40%;  /* Adjusted width */
+    padding-right: 60px;  /* Optional: Added padding to create some space between the text and image */
+}
+
+#about .about-right {
+    max-width: 60%;  /* Adjusted width */
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about .about-left h2 {
+    font-size: 36px;
+    margin-bottom: 20px; /* Adjusted for more space between title and description */
+    font-weight: bold;
+    text-decoration: underline; /* Adding underline to the text */
+}
+
+
+#about p {
+    margin-bottom: 20px;  /* Adjust margin as per your design needs */
+}
+
+#about .about-text p {
+    margin-bottom: 20px;
+}
+
+#about .tech-icons {
+    display: flex;
+    justify-content: space-around; /* Distributes space around images */
+    align-items: center; /* Vertically centers the images */
+    position: absolute; /* Absolute positioning inside the relative parent */
+    bottom: 50px; /* Distance from the bottom of the section */
+    width: 100%; /* Full width of the parent element */
+    animation-duration: 2s; /* 2s = 2 seconds. Adjust as needed. */
+    animation-timing-function: ease-out; /* A gentle slow down at the end */
+}
+
+#about .tech-icon {
+    border-radius: 50%; /* Makes images circular */
+    width: 200px; /* Adjusts the width of the images */
+    height: 200px; /* Adjusts the height of the images */
+    object-fit: cover; /* Ensures images maintain their aspect ratio */
+}
+
+.tech-icon.lua {
+}
+
+.tech-icon.java {
+}
+
+.tech-icon.python {
+}
+
+.tech-icon.sql {
+    /*animation: rollFromRight 2s forwards;*/
+}
+
+@keyframes rollFromLeft {
+    0% {
+        transform: translateX(-1000%) rotate(-720deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rollFromRight {
+    0% {
+        transform: translateX(1000%) rotate(720deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+
+#about .about-content {
+    position: relative; /* Positioning context for the images */
+    height: calc(100% - 80px); /* Subtracting the height of the images to avoid overlay */
+    justify-content: space-between; /* Distributes space between elements */
+}
+
+.about-content {
     text-align: center;
-    padding: 10px 0;
+}
+
+.about-text p {
+    display: inline-block;
+    margin-top: 200px;  /* Add space between the title and the text */
+    /* Additional styles if necessary */
+}
+
+
+
+/* ... (CSS for other sections below) */
+
+
+/* ... (CSS for other sections above) */
+#projects {
+    /*background-color: #676767;*/
+    background-color: #404040;
+    height: 100vh;
+
+    color: white;
+}
+
+#projects .projects-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 20%;  /* Optional, adjust as per your design */
+}
+
+#projects .projects-left {
+    max-width: 40%;  /* Adjusted width */
+    padding-right: 60px;  /* Optional padding for space between text and images */
+}
+
+#projects .projects-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 60%;  /* Adjusted width */
+}
+
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#projects .project img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Space between image and description */
+}
+
+#projects .project p {
+    margin: 0;
+}
+/* ... (CSS for other sections below) */
+
+
+#contact {
+    background-color: #717171;
+    color: white;
+
+}
+
+#contact a {
+    color: white;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
 }
