@@ -134,20 +134,21 @@ section {
 
 /* ... (CSS for other sections above) */
 #about {
-    background-color: #FFFF;
+    background-color: #D3D3D3;
     color: black;
     height: 100vh;
     font-weight: bold;
 }
 
+
 #about .about-content {
     display: flex;
-    align-items: center; /* Vertically aligns the children (h2 and about-text) in the middle */
-    justify-content: flex-start;
     flex-direction: column;
-    height: 100%; /* Takes full height of the parent */
-    text-align: left; /* Aligns text to the left */
-    padding-left: 50px; /* Adds some space to the left */
+    align-items: flex-start; /* This ensures that children align to the left */
+    justify-content: center;
+    padding-left: 50px; /* Add padding to the left for alignment */
+    height: 100%;
+    text-align: left; /* Align text to the left */
 }
 
 #about .about-left {
@@ -172,13 +173,17 @@ section {
 }
 
 
+#about h2,
 #about p {
-    margin-bottom: 20px;  /* Adjust margin as per your design needs */
+    text-align: left; /* Align the h2 and p text to the left */
 }
 
-#about .about-text p {
-    margin-bottom: 20px;
+#about .about-text {
+    position: relative; /* Positioning context for positioning elements */
+    width: 100%; /* Full width of the parent element */
+    padding-right: 50px; /* Add padding to the right if needed */
 }
+
 
 #about .tech-icons {
     display: flex;
@@ -244,10 +249,10 @@ section {
     text-align: center;
 }
 
+
 .about-text p {
-    display: inline-block;
-    margin-top: 200px;  /* Add space between the title and the text */
-    /* Additional styles if necessary */
+    margin-top: -550px; /* Reset margin-top */
+
 }
 
 
@@ -277,10 +282,17 @@ section {
 }
 
 #projects .projects-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 60%;  /* Adjusted width */
+    display: flex; /* This makes it a flex container */
+    flex-direction: row; /* This will line up children horizontally */
+    justify-content: space-evenly; /* This will distribute space evenly between the project items */
+    align-items: flex-start; /* This will align items to the top of the container */
+    flex-wrap: wrap; /* This allows the items to wrap to the next line if the container is too small */
+}
+
+.project {
+    width: calc(33.333% - 10px); /* Adjust the width as necessary, this will give three items per row */
+    margin: 5px; /* This gives a small space between the items */
+    text-align: center; /* This centers the text below the images */
 }
 
 #projects h2 {
@@ -295,9 +307,10 @@ section {
 }
 
 #projects .project p {
-    margin: 0;
+    text-align: left; /* Align the text to the left */
+    margin-left: 0; /* Ensure there is no left margin pushing it away from the edge */
 }
-/* ... (CSS for other sections below) */
+
 
 
 #contact {
