@@ -77,8 +77,6 @@ section {
     align-self: flex-start;
 }
 
-
-
 #intro h1 {
     font-size: 100px;
     margin: 0;
@@ -137,6 +135,7 @@ section {
     background-color: #D3D3D3;
     color: black;
     height: 100vh;
+
     font-weight: bold;
 }
 
@@ -149,6 +148,8 @@ section {
     padding-left: 50px; /* Add padding to the left for alignment */
     height: 100%;
     text-align: left; /* Align text to the left */
+
+
 }
 
 #about .about-left {
@@ -161,8 +162,10 @@ section {
 }
 
 #about h2 {
-    font-size: 36px;
+    font-size: 100px;
     margin-bottom: 20px;
+    margin-top: 30px;
+
 }
 
 #about .about-left h2 {
@@ -251,7 +254,7 @@ section {
 
 
 .about-text p {
-    margin-top: -550px; /* Reset margin-top */
+    margin-top: -500px; /* Reset margin-top */
 
 }
 
@@ -261,55 +264,63 @@ section {
 
 
 /* ... (CSS for other sections above) */
+/* Projects Section CSS */
 #projects {
-    /*background-color: #676767;*/
     background-color: #404040;
-    height: 100vh;
-
     color: white;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+#projects .projects-left h2 {
+    font-size: 100px;
+    /* Align the text to the left */
+    text-align: left;
+    /* Add padding to the left to align with the 'About Me' text */
+    padding-left: 50px;
+    /* Adjust the margin to position the text higher */
+    margin-top: 0;
+    margin-bottom: 325px;
 }
 
 #projects .projects-content {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-right: 20%;  /* Optional, adjust as per your design */
-}
-
-#projects .projects-left {
-    max-width: 40%;  /* Adjusted width */
-    padding-right: 60px;  /* Optional padding for space between text and images */
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow items to wrap */
+    width: 100%; /* Use full width of the container */
 }
 
 #projects .projects-right {
-    display: flex; /* This makes it a flex container */
-    flex-direction: row; /* This will line up children horizontally */
-    justify-content: space-evenly; /* This will distribute space evenly between the project items */
-    align-items: flex-start; /* This will align items to the top of the container */
-    flex-wrap: wrap; /* This allows the items to wrap to the next line if the container is too small */
+    display: flex;
+    justify-content: space-around; /* Even space between images */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+    margin-top: -200px;
+    width: 100%; /* Full width */
 }
 
 .project {
-    width: calc(33.333% - 10px); /* Adjust the width as necessary, this will give three items per row */
-    margin: 5px; /* This gives a small space between the items */
-    text-align: center; /* This centers the text below the images */
+    margin: 15px; /* Add margin for spacing around items */
+    flex-grow: 1; /* Allow flex items to grow */
+    flex-basis: calc(33.33% - 30px); /* Three items per row, minus margin */
+    text-align: center; /* Center text below images */
 }
 
-#projects h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.project img {
+    width: 100%; /* Responsive images */
+    /*max-width: 300px; !* Maximum size for the images *!*/
+    /*max-width: 300px;*/
+    /*max-height: 100px;*/
+    height: auto; /* Maintain aspect ratio */
 }
 
-#projects .project img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px; /* Space between image and description */
+.project p {
+    margin-top: 10px; /* Space between image and description */
 }
 
-#projects .project p {
-    text-align: left; /* Align the text to the left */
-    margin-left: 0; /* Ensure there is no left margin pushing it away from the edge */
-}
 
 
 

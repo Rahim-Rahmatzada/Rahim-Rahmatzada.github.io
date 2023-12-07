@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const { x, y } = getRandomPosition(15, 15);
                 square.style.left = x + "px";
                 square.style.top = y + "px";
-            }, 3000); // 3000ms to sync with the fadeInOut animation duration
+            }, 5000); // 3000ms to sync with the fadeInOut animation duration
         }, i * 500); // Introduce a delay of 500ms times the index (i)
     }
 });
