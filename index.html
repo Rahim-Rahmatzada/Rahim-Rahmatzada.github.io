@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="styles.css">
   <script src="Main.js" defer></script>
   <script src="SquareAnimation.js" defer></script>
-
-
+  <script src="fractal.js"></script>
   <title>Portfolio Website</title>
 </head>
 <body>
@@ -15,7 +14,7 @@
 <section id="intro">
   <div class="intro-content">
     <h1 id="name"></h1>
-    <img src="Images/whatsappimgBackgroundRemoved2.png" alt="">
+    <canvas id="juliaCanvas" width="100" height="100"></canvas>
   </div>
 
   <div id="menu">
@@ -25,11 +24,7 @@
     <span>|</span>
     <a href="#contact">Contact</a>
   </div>
-
-
 </section>
-
-
 
 <section id="about">
   <div class="about-content">
@@ -45,7 +40,6 @@
     </div>
   </div>
 </section>
-
 
 <section id="projects">
   <div class="projects-left">
@@ -69,7 +63,6 @@
     </div>
   </div>
 </section>
-
 
 <section id="contact">
   <h2>Contact Me</h2>

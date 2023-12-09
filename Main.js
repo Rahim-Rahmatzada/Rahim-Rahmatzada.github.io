@@ -28,10 +28,14 @@ document.addEventListener("DOMContentLoaded", typeWriter);
 
 
 function animateTechIcons() {
-    document.querySelector(".tech-icon.lua").style.animation = "rollFromLeft 2s forwards";
-    document.querySelector(".tech-icon.java").style.animation = "rollFromLeft 2s forwards";
-    document.querySelector(".tech-icon.python").style.animation = "rollFromRight 2s forwards";
-    document.querySelector(".tech-icon.sql").style.animation = "rollFromRight 2s forwards";
+    document.querySelector(".tech-icon.lua").style.animation =
+        "rollFromLeft 2s forwards, bop 1s ease-in-out 2s infinite";
+    document.querySelector(".tech-icon.java").style.animation =
+        "rollFromLeft 2s forwards, bop 1s ease-in-out 2s infinite";
+    document.querySelector(".tech-icon.python").style.animation =
+        "rollFromRight 2s forwards, bop 1s ease-in-out 2s infinite";
+    document.querySelector(".tech-icon.sql").style.animation =
+        "rollFromRight 2s forwards, bop 1s ease-in-out 2s infinite";
 }
 
 
@@ -64,3 +68,8 @@ document.querySelector('#menu a[href="#about"]').addEventListener('click', () =>
         hasAnimated = true;
     }
 });
+
+
+
+
+
